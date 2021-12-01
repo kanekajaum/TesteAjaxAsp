@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "laboratorio";
+}
+
+<h2>laboratorio</h2>
+
+<br />
+<hr />
+
+<!DOCTYPE html>
+
+
+
+<button class="btn btn-default" onclick="adicionaLinha('tbl')">Adicionar <span class="glyphicon glyphicon-plus "></span></button>
+<br />
+<br />
+
+<form method="post" id="FormFinalizaOrdem">
+
+    <table id="tbl" border="1" width="800" class="table table-striped text-center">
+        <tr>
+            <td>Produto</td>
+            <td>Valor</td>
+            <td>Acao</td>
+        </tr>
+    </table>
+</form>
+<div class="text-center">
+    <button class="btn btn-primary" onclick="ListarTabelaHtmlGerarParaController()">Salvar Itens da Tabela</button>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    //Funcao adiciona uma nova linha na tabela
+    function adicionaLinha(idTabela) {
+
+        var tabela = document.getElementById(idTabela);
+        var numeroLinhas = tabela.rows.length;
+        var linha = tabela.insertRow(numeroLinhas);
+        var celula1 = linha.insertCell(0);
+        var celula2 = linha.insertCell(1);
+        var celula3 = linha.insertCell(2);
+        linha.setAttribute("class", "item")
+        celula1.setAttribute("name", "Nome");
+        celula2.setAttribute("name", "Valor");
+        celula1.innerHTML = 'produto ' + Math.floor((Math.random() * 100) + 1);
+        celula2.innerHTML = Math.floor((Math.random() * 100) + 1);
+        celula3.innerHTML = "<button class='btn btn-danger' onclick='removeLinha(this)'>Remover <span class='glyphicon glyphicon-trash'></span></button>";
+    };
+
+    // funcao remove uma linha da tabela
+    function removeLinha(linha) {
+        var i = linha.parentNode.parentNode.rowIndex;
+        document.getElementById('tbl').deleteRow(i);
+    };
+
+    function ListarTabelaHtmlGerarParaController()
+    {
+        var todosProdutos = new Object();
+        var produtos = [];
+        var todosProdutos = [];
+
+        $('.item').each(function () {
+
+            var entidadesProdutos = {
+                Nome: $(this).children()[0].innerText,
+                Valor: $(this).children()[1].innerText
+            };
+
+            todosProdutos.push(entidadesProdutos);
+            produtos = todosProdutos;
+        });
+
+        var json =
+        {
+            produtos: JSON.stringify(produtos)
+        }
+        $.ajax
+            ({
+                url: '@Url.Action("SalvarListaHtmlViaAjax","Home")',
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(json),
+                success: function (data) {
+                    console.log("OK", data);
+                },
+                error: function (data) {
+                    console.log('Erro ajax' + data);
+                }
+
+            });
+    }
+
+</script>
