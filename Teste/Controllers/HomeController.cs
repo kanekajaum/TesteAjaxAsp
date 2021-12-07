@@ -23,6 +23,13 @@ namespace Teste.Controllers
             return View();
         }
 
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
         public ActionResult laboratorio()
         {
             ViewBag.Message = "Your contact page.";
@@ -42,5 +49,17 @@ namespace Teste.Controllers
             }
             return Json(listaAdicionar, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult ValidarExcelJson(object data)
+        {
+
+            data.ToString();
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
+        //public ActionResult ValidarExcel(string fileExcel)
+        //{
+        //    return Json(fileExcel, JsonRequestBehavior.AllowGet);
+        //}
     }
 }

@@ -1,17 +1,65 @@
-﻿@{
-    ViewBag.Title = "Contact";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+﻿"
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Não é possível encontrar o recurso.</title>
+    <meta name="viewport" content="width=device-width" />
+    <style>
+         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;}
+         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+         pre {font-family:"Consolas","Lucida Console",Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}
+         .marker {font-weight: bold; color: black;text-decoration: none;}
+         .version {color: gray;}
+         .error {margin-bottom: 10px;}
+         }
+    </style>
+</head>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<body bgcolor="white">
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    <span>
+        <H1>Erro de Servidor no Aplicativo '/'.<hr width=100% size=1 color=silver /></H1>
+
+        <h2> <i>Não é possível encontrar o recurso.</i> </h2>
+    </span>
+
+    <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+        <b> Descrição: </b>HTTP 404. O recurso que voc&#234; est&#225; procurando (ou uma de suas depend&#234;ncias) n&#227;o p&#244;de ser removido, seu nome foi alterado ou est&#225; temporariamente indispon&#237;vel. Examine o URL e certifique-se de que est&#225; digitado corretamente.
+        <br /><br />
+
+        <b> URL solicitada: </b>/Home/Home/ValidarExcelJson<br /><br />
+
+        <hr width=100% size=1 color=silver />
+
+        <b>Informações sobre a Versão:</b>&nbsp;Microsoft .NET Framework Versão:4.0.30319; Versão do ASP.NET:4.8.4330.0
+
+    </font>
+
+</body>
+</html>
+<!--
+[HttpException]: Um m&#233;todo &#39;Home&#39; de a&#231;&#227;o p&#250;blica n&#227;o foi encontrado no controlador &#39;Teste.Controllers.HomeController&#39;.
+   em System.Web.Mvc.Controller.HandleUnknownAction(String actionName)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+-->
+"
